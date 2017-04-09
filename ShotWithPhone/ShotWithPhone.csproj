@@ -1,0 +1,840 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{0C6CDF8C-2BF8-4262-8182-96F02782C0CC}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShotWithPhone</RootNamespace>
+    <AssemblyName>ShotWithPhone</AssemblyName>
+    <DefaultLanguage>zh-CN</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>ShotWithPhone_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>E13762B22EBB3896C38ACAE2A39ABDAC58BC5309</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Assets\NewStoreLogo.scale-100.png" />
+    <Content Include="Assets\NewStoreLogo.scale-125.png" />
+    <Content Include="Assets\NewStoreLogo.scale-150.png" />
+    <Content Include="Assets\NewStoreLogo.scale-200.png" />
+    <Content Include="Assets\NewStoreLogo.scale-400.png" />
+    <Content Include="Assets\ReadMe.jpg" />
+    <Content Include="Assets\ReadMe2.jpg" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-125.png" />
+    <Content Include="Assets\Square310x310Logo.scale-150.png" />
+    <Content Include="Assets\Square310x310Logo.scale-200.png" />
+    <Content Include="Assets\Square310x310Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16_altform-unplated.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256_altform-unplated.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32_altform-unplated.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48_altform-unplated.png" />
+    <Content Include="Assets\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\Square71x71Logo.scale-125.png" />
+    <Content Include="Assets\Square71x71Logo.scale-150.png" />
+    <Content Include="Assets\Square71x71Logo.scale-200.png" />
+    <Content Include="Assets\Square71x71Logo.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Devices.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_microsoft_surfacebook_portrait_gold-portrait_2d-glare.webp.png" />
+    <Content Include="PhoneImageSources\res_id_microsoft_surfacebook_portrait_gold-portrait_2d-screen.webp.png" />
+    <Content Include="PhoneImageSources\res_id_microsoft_surfacebook_portrait_white-portrait_2d-glare.webp.png" />
+    <Content Include="PhoneImageSources\res_id_microsoft_surfacebook_portrait_white-portrait_2d-screen.webp.png" />
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BlankPage1.xaml.cs">
+      <DependentUpon>BlankPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\Converter.cs" />
+    <Compile Include="DevicesReader.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.cs" />
+    <Compile Include="Model\VisualTreeHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestPhonePage.xaml.cs">
+      <DependentUpon>TestPhonePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="ShotWithPhone_StoreKey.pfx" />
+    <None Include="ShotWithPhone_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Phone.xml" />
+    <Content Include="PhoneImageSources\res_id_apple_iphone5s_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iphone5s_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iphone5s_portrait_gold-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iphone5s_portrait_gold-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iphone5s_portrait_silver-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iphone5s_portrait_silver-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iPhone6sPlus_portrait_gold-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iPhone6sPlus_portrait_gold-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iPhone6sPlus_portrait_grey-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iPhone6sPlus_portrait_grey-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iPhone6sPlus_portrait_pink-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iPhone6sPlus_portrait_pink-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iPhone6sPlus_portrait_silver-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iPhone6sPlus_portrait_silver-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iphone6_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iphone6_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iphone6_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_apple_iphone6_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_htc-one-m7_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_htc-one-m7_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_htc-one-m8_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_htc-one-m8_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_htc-one-m8_portrait_black_grey-back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_htc-one-m8_portrait_black_grey-back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_huawei_honor6plus_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_huawei_honor6plus_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_huawei_p7_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_huawei_p7_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_huawei_p7_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_huawei_p7_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_huawei_p8_portrait_gold-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_huawei_p8_portrait_gold-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_lg_g2_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_lg_g2_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_lg_g3_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_lg_g3_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_m2_note_portrait_blue-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_m2_note_portrait_blue-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_m2_note_portrait_grey-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_m2_note_portrait_grey-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_m2_note_portrait_pink-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_m2_note_portrait_pink-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_m2_note_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_m2_note_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx2_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx2_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx2_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx2_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx3_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx3_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx3_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx3_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx4pro_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx4pro_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx4pro_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx4pro_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx4_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx4_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx4_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx4_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx5_landscape_black-landscape_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx5_landscape_black-landscape_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx5_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx5_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx5_portrait_gold-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx5_portrait_gold-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx5_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mx5_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_metal_portrait_gold-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_metal_portrait_gold-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_note_portrait_blue-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_note_portrait_blue-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_note_portrait_green-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_note_portrait_green-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_note_portrait_pink-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_note_portrait_pink-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_note_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_note_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_note_portrait_yellow-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_note_portrait_yellow-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_portrait_blue-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_portrait_blue-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_portrait_green-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_portrait_green-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_portrait_pink-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_portrait_pink-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_portrait_yellow-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_mxblue_portrait_yellow-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_pro5_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_pro5_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_pro6_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_pro6_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_pro6_portrait_gold-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_pro6_portrait_gold-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_pro6_portrait_sliver-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_meizu_pro6_portrait_sliver-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_MotoXStyle_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_MotoXStyle_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_MotoXStyle_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_MotoXStyle_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_MotoXStyle_portrait_white_face_white_back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_MotoXStyle_portrait_white_face_white_back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_moto_x_2013_portrait_black_no_back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_moto_x_2013_portrait_black_no_back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_moto_x_2013_portrait_white_no_back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_moto_x_2013_portrait_white_no_back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_moto_x_2014_portrait_black-shell_blue-green-plastic-back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_moto_x_2014_portrait_black-shell_blue-green-plastic-back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_moto_x_2014_portrait_dark-grey-shell_dark-grey-plastic-back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_moto_x_2014_portrait_dark-grey-shell_dark-grey-plastic-back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_moto_x_2014_portrait_grey-shell_brown-wood-back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_moto_x_2014_portrait_grey-shell_brown-wood-back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_moto_x_2014_portrait_white-shell_brown-leather-back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_moto_x_2014_portrait_white-shell_brown-leather-back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_NewMotoG_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_NewMotoG_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus4_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus4_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus5_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus5_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus6_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus6_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus7-2013_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus7-2013_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus9_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus9_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus_6p_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus_6p_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus_6p_portrait_black_face_gold_back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus_6p_portrait_black_face_gold_back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus_nexus4_landscape_black-landscape_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus_nexus4_landscape_black-landscape_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus_nexus5_landscape_black-landscape_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_nexus_nexus5_landscape_black-landscape_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_oneplus_2_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_oneplus_2_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_oneplus_2_portrait_black_back1-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_oneplus_2_portrait_black_back1-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_oneplus_2_portrait_black_back2-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_oneplus_2_portrait_black_back2-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_oneplus_one_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_oneplus_one_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_note3_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_note3_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_note4_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_note4_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_note5_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_note5_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s3_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s3_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s4_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s4_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s5_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s5_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s6_edge_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s6_edge_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s6_edge_portrait_gold-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s6_edge_portrait_gold-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s6_portrait_blue-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s6_portrait_blue-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s6_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_samsung_s6_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_blue_back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_blue_back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_cyan_back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_cyan_back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_green_back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_green_back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_orange_back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_orange_back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_pink_back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_pink_back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_purple_back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_purple_back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_yellow_back-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_nuts_portrait_white_face_yellow_back-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_t1_landscape_black-landscape_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_t1_landscape_black-landscape_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_t1_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_t1_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_t1_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_smartisan_t1_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_sony_XperiaZ3_landscape_black_back-landscape_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_sony_XperiaZ3_landscape_black_back-landscape_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_2_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_2_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_3_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_3_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_4_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_4_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_4_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_4_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_mi_note_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_mi_note_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_mi_note_portrait_white-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_mi_note_portrait_white-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_redmi2_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_redmi2_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_redmi_note2_portrait_black-portrait_2d-glare.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PhoneImageSources\res_id_xiaomi_redmi_note2_portrait_black-portrait_2d-screen.webp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BlankPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TestPhonePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsMobile, Version=10.0.15063.0">
+      <Name>Windows Mobile Extensions for the UWP %28WindowsMobile, Version=10.0.15063.0%29</Name>
+    </SDKReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

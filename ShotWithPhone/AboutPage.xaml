@@ -1,0 +1,135 @@
+﻿<Page
+    x:Class="ShotWithPhone.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ShotWithPhone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cvt="using:ShotWithPhone"
+    mc:Ignorable="d">
+    <Page.Transitions>
+        <TransitionCollection>
+            <!--<ContentThemeTransition />-->
+            <PaneThemeTransition Edge="Right" />
+        </TransitionCollection>
+    </Page.Transitions>
+    <Page.Resources>
+        <cvt:VisableConverter x:Key="VisableConverter" />
+        <Storyboard x:Name="CloseAboutPage">
+            <DoubleAnimation x:Name="CloseAnimation"
+                             Storyboard.TargetName="MainGrid"
+                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                             Duration="0:0:0.2" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+        <Storyboard x:Name="OpenAboutPage">
+            <DoubleAnimation To="0" 
+                             Storyboard.TargetName="MainGrid"
+                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                             Duration="0:0:0.2" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseIn" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          x:Name="MainGrid"
+          ManipulationCompleted="Grid_ManipulationCompleted" ManipulationDelta="Grid_ManipulationDelta" 
+          ManipulationMode="TranslateX" >
+        <Grid.RenderTransform>
+            <CompositeTransform />
+        </Grid.RenderTransform>
+        <Grid.Resources>
+            <Style TargetType="TextBlock" x:Name="AboutTextBlock">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="TextWrapping" Value="Wrap" />
+                <Setter Property="Margin" Value="10,20,10,0" />
+            </Style>
+        </Grid.Resources>
+        <ListView SelectionMode="None">
+            <ListView.Style>
+                <Style TargetType="ListView">
+                    <Setter Property="ItemsPanel">
+                        <Setter.Value>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical" Background="Transparent" ManipulationMode="System,TranslateX"/>
+                            </ItemsPanelTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.Style>
+            <ListView.Header>
+                <TextBlock FontSize="40" Margin="10" Text="关于" />
+            </ListView.Header>
+            <ListViewItem>
+                <TextBlock FontSize="20" TextWrapping="Wrap" Margin="10,20,10,0">
+                截图加壳
+                </TextBlock>
+            </ListViewItem>
+            <TextBlock Style="{StaticResource AboutTextBlock}">
+                给喜欢的截图加上壳子。
+            </TextBlock>
+            <ListViewItem>
+                <TextBlock Style="{StaticResource AboutTextBlock}">
+                汉堡菜单里可以选择机型和颜色。
+                </TextBlock>
+            </ListViewItem>
+            <ListViewItem>
+                <TextBlock Style="{StaticResource AboutTextBlock}">
+                打开白色背景的时候保存格式为jpg，关闭白色背景的时候保存格式为png。
+                </TextBlock>
+            </ListViewItem>
+            <ListViewItem>
+                <TextBlock Style="{StaticResource AboutTextBlock}">
+                选择图片后可以调整位置，双击切换宽度适应和高度适应。
+                </TextBlock>
+            </ListViewItem>
+            <ListViewItem>
+                <TextBlock FontSize="20" TextWrapping="Wrap" Margin="10,30,10,0">
+                长截图
+                </TextBlock>
+            </ListViewItem>
+            <ListViewItem>
+                <TextBlock Style="{StaticResource AboutTextBlock}">
+                先手动截图，然后进长截图页面选择刚截取的几张图像，将几张图片拼接在一起。
+                </TextBlock>
+            </ListViewItem>
+            <ListViewItem>
+                <TextBlock Style="{StaticResource AboutTextBlock}">
+                上下移动截图时，第一张是没办法移动的，要先选中第二项或者以后的。
+                </TextBlock>
+            </ListViewItem>
+            <ListViewItem>
+                <TextBlock Style="{StaticResource AboutTextBlock}" HorizontalAlignment="Right" PointerPressed="MePointerPressed">
+                BY：叫我蓝火火
+                </TextBlock>
+            </ListViewItem>
+            <ListViewItem>
+                <TextBlock x:Name="Version" Style="{StaticResource AboutTextBlock}" HorizontalAlignment="Right" PointerPressed="MePointerPressed">
+                </TextBlock>
+            </ListViewItem>
+            <ListViewItem>
+                <ToggleSwitch Header="毛玻璃特效" FontSize="20" Margin="0,20,0,0" 
+                          Visibility="{Binding Source={StaticResource AppSettings},Path=IsMobile,Mode=TwoWay,Converter={StaticResource VisableConverter}}"
+                          IsOn="{Binding Source={StaticResource AppSettings},Path=IsGlassEnable,Mode=TwoWay}" 
+                          Toggled="ToggleSwitch_Toggled"/>
+            </ListViewItem>
+            <ListViewItem>
+                <TextBlock x:Name="TagTextBlock" FontSize="20" Text="重启应用程序生效" Foreground="Red" Visibility="Collapsed"/>
+            </ListViewItem>
+            <ListViewItem>
+                <ToggleSwitch Header="保存图片后加载到剪贴板" FontSize="20" Margin="0,20,0,0"
+                          Visibility="{Binding Source={StaticResource AppSettings},Path=IsNotMobile,Mode=TwoWay,Converter={StaticResource VisableConverter}}"
+                          IsOn="{Binding Source={StaticResource AppSettings},Path=IsClipboardEnable,Mode=TwoWay}"/>
+            </ListViewItem>
+            <ListViewItem>
+                <ToggleSwitch Header="按创建时间排序选中的文件" FontSize="20" Margin="0,20,0,0"
+                          IsOn="{Binding Source={StaticResource AppSettings},Path=IsOrderFileByDate,Mode=TwoWay}"/>
+            </ListViewItem>
+        </ListView>
+    </Grid>
+</Page>

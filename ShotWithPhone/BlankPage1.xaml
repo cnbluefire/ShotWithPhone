@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="ShotWithPhone.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ShotWithPhone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical">
+            <Grid x:Name="PhoneGrid" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" HorizontalAlignment="Center"/>
+                <Grid x:Name="Phone" Grid.Column="1">
+                    <Viewbox>
+                        <Grid x:Name="ScreenGrid" >
+                            <Grid.Resources>
+                                <Storyboard x:Name="BeWhite" >
+                                    <DoubleAnimation Storyboard.TargetName="WhiteRec"
+                                                                     Storyboard.TargetProperty="Opacity"
+                                                                     To="1" Duration="0:0:0.1" />
+                                </Storyboard>
+                                <Storyboard x:Name="AntiBeWhite" >
+                                    <DoubleAnimation Storyboard.TargetName="WhiteRec"
+                                                                     Storyboard.TargetProperty="Opacity"
+                                                                     To="0" Duration="0:0:0.1" />
+                                </Storyboard>
+                            </Grid.Resources>
+                            <Grid Background="White" />
+                            <Image x:Name="PhoneImage" Source="/PhoneImageSources/res_id_meizu_mxblue_portrait_yellow-portrait_2d-screen.webp.png" Stretch="None" />
+                            <Image x:Name="PhoneScreen" Stretch="Fill"  Source="/wp_ss_20160426_0002.png" Margin="10,0,0,0" Height="1280" Width="768" />
+                            <Image x:Name="PhoneGlare" Source="/PhoneImageSources/res_id_meizu_mxblue_portrait_yellow-portrait_2d-glare.webp.png"  Stretch="None" />
+                        </Grid>
+
+                    </Viewbox>
+                </Grid>
+                <!--<Rectangle Grid.Row="1" Grid.Column="1" x:Name="WhiteRec" Fill="White" Opacity="0" />-->
+
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</Page>
